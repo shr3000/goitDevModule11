@@ -28,11 +28,11 @@ public class CrudClientService {
     public void update(long id, String name) {
         util = HibernateUtil.getInstance();
         Session session = util.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        Client client = session.get(Client.class, id);
-        client.setName(name);
-        session.persist(client);
-        transaction.commit();
+            Transaction transaction = session.beginTransaction();
+                Client client = session.get(Client.class, id);
+                client.setName(name);
+                session.persist(client);
+            transaction.commit();
         session.close();
     }
 

@@ -2,6 +2,9 @@ package client;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import tickets.Ticket;
+
+import java.util.List;
 
 @Table(name = "client")
 @Entity
@@ -11,6 +14,8 @@ public class Client {
     @Id
     @Column
     private long id;
-    @Column
+    @Column(name = "name", length = 200, nullable = false)
     private String name;
+    @OneToMany(mappedBy = "clientId", cascade = CascadeType.ALL)
+    private List<Ticket> tickets;
 }

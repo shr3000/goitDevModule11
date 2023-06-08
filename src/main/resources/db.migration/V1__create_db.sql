@@ -17,4 +17,4 @@ CREATE TABLE Ticket (
     FOREIGN KEY (client_id) REFERENCES Client(id),
     FOREIGN KEY (from_planet_id) REFERENCES Planet(id),
     FOREIGN KEY (to_planet_id) REFERENCES Planet(id)
-)
+);
