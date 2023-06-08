@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
 group = 'com.cron'
@@ -10,6 +11,14 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.hibernate.orm:hibernate-core:6.2.3.Final'
+    implementation 'org.flywaydb:flyway-core:9.19.1'
+    implementation platform('org.junit:junit-bom:5.9.1')
+    implementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.h2database:h2:2.1.214'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
+
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
